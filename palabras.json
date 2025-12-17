@@ -1,0 +1,39 @@
+[
+
+    {
+    "id": "abcd1",
+    "name": "mano",
+    "description": "Para representar la palabra mano en la Lengua de Signos Española (LSE), se destaca la mano dominante manteniéndola activa frente al torso, con la palma orientada hacia uno mismo y los dedos extendidos y juntos. La otra mano, que actúa como base o referente, adopta una posición similar con la palma hacia arriba. La mano activa realiza entonces un movimiento corto y preciso, llevando su borde cubital (el lado del meñique) a golpear o posarse ligeramente sobre la palma de la mano base, cerca del centro de la misma, estableciendo así un contacto que delimita y designa específicamente esta parte del cuerpo.",
+    "src": "a/b/c"
+    },
+
+    {
+    "id": "abcd2",
+    "name": "brazo",
+    "description": "Para representar la palabra brazo en la Lengua de Signos Española (LSE), se utiliza una mano con los dedos extendidos y juntos, mientras que el brazo contrario actúa como referente. La mano activa, con la palma orientada hacia el cuerpo, se coloca de manera que el borde cubital (el lado del meñique) recorra longitudinalmente la parte superior del brazo contrario, desde el hombro hasta el codo, en un trazo firme y continuo. Este contacto directo sobre la zona anatómica que se está designando identifica de forma clara y específica la parte del cuerpo en cuestión.",
+    "src": "a/b/c"
+    },
+
+
+    {
+    "id": "abcd3",
+    "name": "torso",
+    "description": "Para representar la palabra torso en la Lengua de Signos Española (LSE), se utilizan ambas manos con las palmas abiertas y planas, orientadas hacia el cuerpo. Las manos se colocan a la altura del pecho, con las yemas de los dedos tocando ligeramente la parte superior del torso. Desde esta posición inicial, se ejecuta un movimiento simultáneo y simétrico en el que ambas manos descienden por la parte frontal del cuerpo con un ligero arco hacia los lados, siguiendo el contorno del pecho y el abdomen, hasta llegar aproximadamente a la cintura, delineando así con el gesto la silueta central y el volumen del tronco humano.",
+    "src": "a/b/c"
+    },
+
+    {
+    "id": "abcd4",
+    "name": "cabeza",
+    "description": "Para representar la palabra cabeza en la Lengua de Signos Española (LSE), se utiliza una mano con los dedos ligeramente flexionados y separados, adoptando una forma curvada. La palma de esta mano se orienta hacia uno mismo y se coloca de tal manera que la yema de los dedos toque ligeramente la sien. Desde este punto de contacto inicial, la mano ejecuta un suave movimiento circular, describiendo un pequeño arco que bordea la parte superior y lateral del cráneo, para finalmente detenerse cerca de la otra sien, delineando así de forma icónica el contorno redondeado de la cabeza.",
+    "src": "a/b/c"    
+    },
+
+    {
+    "id": "abcd5",
+    "name": "casa",
+    "description": "Para representar la palabra casa en la Lengua de Signos Española (LSE), se configura ambas manos con la misma forma: palmas enfrentadas y planas, con los dedos juntos y extendidos, imitando las paredes laterales de una construcción. Partiendo de esta posición con las manos separadas a la altura del pecho, se realiza un movimiento simultáneo en el que las yemas de los dedos de ambas manos se acercan hasta tocarse en la parte superior, formando con los brazos y las manos el perfil triangular característico de un tejado a dos aguas. Este gesto, que concluye con las manos unidas por sus bordes superiores, simboliza de manera icónica la estructura de una",
+    "src": "a/b/c"
+    } 
+    
+]

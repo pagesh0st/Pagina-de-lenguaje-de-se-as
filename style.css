@@ -6,11 +6,13 @@
 }
 
 body {
+    display:flex;
+    flex-direction: row;
     background-color: rgb(255, 51, 0);
 }
 
 img {
-    height: 400px;
+    height: 200px;
 }
 
 #titulo {
@@ -18,7 +20,7 @@ img {
     color:rgb(255, 255, 255);
     box-shadow: 1px 1px 20px rgb(146, 145, 255);
 
-    font-size: 4rem;
+    font-size: 2rem;
     text-align: left;
     margin: 60px;
     margin-left: 10%;
@@ -42,7 +44,7 @@ img {
 #barra-de-titulo {
     background-color: rgb(0, 0, 0);
     display: flex;
-    max-height: 500px;
+    max-height: 300px;
 
 }
 
@@ -54,13 +56,54 @@ img {
 
 }
 
-#buscador {
-    padding: 50px;
+.buscador-container {
+    padding: 10px;
     background-color: rgb(47, 0, 255);
+}
+
+.objeto-resultado {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
 
 }
 
+#contenido-informacion {
+    padding: 20px;
+    transition: 1s;
+
+    color:rgb(255, 255, 255);
+    background-color: rgb(73, 32, 255);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 50%;
+    min-width: 50%;
+}
+
+#contenido {
+    border-radius: 20px;
+    padding: 20px;
+    color:rgb(255, 255, 255);
+    background-color: rgb(73, 32, 255);
+
+}
+
+#descripcion-contenedor {
+    background-color: rgb(53, 24, 184);
+    border-radius: 20px;
+    
+    margin: 10px;
+    max-width: 800px;
+}
+
 #main {
+
+    overflow: auto;
 
     display: flex;
     flex-direction: column;
@@ -71,20 +114,39 @@ img {
 
     margin-left: auto;
     margin-right: auto;
-    max-width: 1400px;
+     max-width: 50%;
+    min-width: 30%;
 
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 20px rgb(0, 0, 0);
 
 }
 
+.titulo-palabra {
+    font-size: 3rem;
+    padding:10px;
+}
+
+.contenido-palabra {
+    font-size: 1.3rem;
+    padding:20px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.recurso-palabra {
+    padding:20px;
+    height: 200px;
+    align-self: center;
+}
+
 input {
     border: none;
     border-radius: 50px;
     padding: 10px;
-    width: 400px;
+    min-width: 40%;
     max-width: 400px;
-    margin: 60px;
+    margin: 30px;
 
     box-shadow: 0px 0px 20px rgb(146, 255, 237);
 

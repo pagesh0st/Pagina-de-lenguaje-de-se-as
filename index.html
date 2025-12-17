@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="code.js"></script>
 </head>
+
 <body>
     <div id="main">
         <div id="barra-de-titulo">
@@ -13,16 +17,18 @@
             <img src="portada.jpg" alt="">
         </div>
 
-
-
-        <div id="buscador">
-            <p id="eslogan">Cualquier palabra que busque a lenguaje de señas.</p>
-            <input type="text">
+        <div class="buscador-container">
+            <input type="text" id="busqueda" placeholder="Buscar palabras..." autocomplete="off">
+            <div class="contenedor-resultados">
+                <div id="contenido"></div>
+            </div>
         </div>
+    </div>
 
-        <div id="contenido"></div>
+    <div id="contenido-informacion">
 
     </div>
 
 </body>
+
 </html>
