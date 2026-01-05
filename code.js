@@ -1,17 +1,14 @@
 let listaObjetos = [];
 
-filter()
+filter();
 
 function filter() {
     fetch('palabras.json')
         .then(response => response.json())
         .then(data => {
             console.log(data);
-
             listaObjetos = data;
-
             mostrarContenido(listaObjetos);
-
             configurarFiltro();
         })
         .catch(error => console.error('Error:', error));
@@ -27,67 +24,57 @@ function configurarFiltro() {
 
     inputBusqueda.addEventListener('input', function () {
         const termino = this.value.trim().toLowerCase();
-        filtrarYResaltar(termino);
+        filtrarPalabras(termino);
     });
 }
 
-function filtrarYResaltar(termino) {
+function filtrarPalabras(termino) {
     if (!termino) {
         mostrarContenido(listaObjetos);
         return;
     }
 
-    const objetosFiltrados = listaObjetos.map(obj => ({ ...obj }));
-
-    objetosFiltrados.forEach(obj => {
-        obj.puntuacion = calcularPuntuacionCoincidencia(obj, termino);
+    // Filtrar objetos que contengan el término exacto como subcadena
+    const resultados = listaObjetos.filter(obj => {
+        const nombre = obj.name.toLowerCase();
+        const descripcion = obj.description.toLowerCase();
+        const id = obj.id.toLowerCase();
+        
+        return nombre.includes(termino) || 
+               descripcion.includes(termino) || 
+               id.includes(termino);
     });
 
-    const objetosConCoincidencias = objetosFiltrados.filter(obj => obj.puntuacion > 0);
-
-    objetosConCoincidencias.sort((a, b) => b.puntuacion - a.puntuacion);
-
-    mostrarResultadosFiltrados(objetosConCoincidencias, termino);
-}
-
-function calcularPuntuacionCoincidencia(objeto, termino) {
-    let puntuacion = 0;
-    const nombre = objeto.name.toLowerCase();
-    const descripcion = objeto.description.toLowerCase();
-    const id = objeto.id.toLowerCase();
-
-    if (nombre === termino) {
-        puntuacion += 100;
-    }
-
-    if (nombre.includes(termino)) {
-        puntuacion += 50;
-        if (nombre.startsWith(termino)) {
-            puntuacion += 20;
-        }
-    }
-
-    if (descripcion.includes(termino)) {
-        puntuacion += 10;
-    }
-
-    if (id.includes(termino)) {
-        puntuacion += 5;
-    }
-
-    const palabrasNombre = nombre.split(/\s+/);
-    palabrasNombre.forEach(palabra => {
-        if (palabra.startsWith(termino)) {
-            puntuacion += 15;
-        }
+    // Ordenar por relevancia
+    resultados.sort((a, b) => {
+        const nombreA = a.name.toLowerCase();
+        const nombreB = b.name.toLowerCase();
+        
+        // Coincidencia exacta primero
+        if (nombreA === termino && nombreB !== termino) return -1;
+        if (nombreB === termino && nombreA !== termino) return 1;
+        
+        // Empieza con el término
+        const empiezaA = nombreA.startsWith(termino);
+        const empiezaB = nombreB.startsWith(termino);
+        if (empiezaA && !empiezaB) return -1;
+        if (empiezaB && !empiezaA) return 1;
+        
+        // Contiene el término en el nombre
+        const contieneNombreA = nombreA.includes(termino);
+        const contieneNombreB = nombreB.includes(termino);
+        if (contieneNombreA && !contieneNombreB) return -1;
+        if (contieneNombreB && !contieneNombreA) return 1;
+        
+        // Por defecto, orden alfabético
+        return nombreA.localeCompare(nombreB);
     });
 
-    return puntuacion;
+    mostrarResultadosFiltrados(resultados, termino);
 }
 
 function mostrarResultadosFiltrados(objetos, termino) {
     const contenidoDiv = document.getElementById('contenido');
-
     contenidoDiv.innerHTML = '';
 
     if (objetos.length === 0) {
@@ -103,26 +90,26 @@ function mostrarResultadosFiltrados(objetos, termino) {
     encabezado.className = 'resultados-header';
     encabezado.innerHTML = `
         <p>Se encontraron <strong>${objetos.length}</strong> resultados para: <strong>"${termino}"</strong></p>
-        <p class="ayuda-filtro">Los resultados están ordenados por relevancia</p>
+        <p class="ayuda-filtro">Mostrando los primeros 5 resultados ordenados por relevancia</p>
     `;
     contenidoDiv.appendChild(encabezado);
 
-    objetos.forEach((objeto, index) => {
+    // Limitar a 5 resultados
+    const objetosLimitados = objetos.slice(0, 5);
+
+    objetosLimitados.forEach(objeto => {
         const elemento = document.createElement('div');
-        elemento.className = `objeto-item ${objeto.puntuacion >= 70 ? 'destacado' : ''}`;
+        const esDestacado = objeto.name.toLowerCase().startsWith(termino);
+        elemento.className = `objeto-item ${esDestacado ? 'destacado' : ''}`;
 
         const nombreResaltado = resaltarTexto(objeto.name, termino);
-        const descripcionResaltada = resaltarTexto(
-            objeto.description.substring(0, 150) + (objeto.description.length > 150 ? '...' : ''),
-            termino
-        );
 
         elemento.innerHTML = `
-<div class = "objeto-resultado">
-            <div class="objeto-header">
-                <h3 class="objeto-nombre" onclick="wiki('${objeto.name}', '${objeto.description}', '${objeto.src}')">${nombreResaltado}</h3>
+            <div class="objeto-resultado">
+                <div class="objeto-header">
+                    <h3 class="objeto-nombre" onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}')">${nombreResaltado}</h3>
+                </div>
             </div>
-        </div>
         `;
         contenidoDiv.appendChild(elemento);
     });
@@ -130,25 +117,33 @@ function mostrarResultadosFiltrados(objetos, termino) {
 
 function resaltarTexto(texto, termino) {
     if (!termino) return texto;
-
-    const regex = new RegExp(`(${termino})`, 'gi');
+    
+    // Escapar caracteres especiales en regex
+    const terminoEscapado = termino.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${terminoEscapado})`, 'gi');
     return texto.replace(regex, '<span class="resaltado">$1</span>');
+}
+
+function escaparComillas(texto) {
+    return texto.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
 
 function mostrarContenido(objetos) {
     const contenidoDiv = document.getElementById('contenido');
-
     contenidoDiv.innerHTML = '';
 
-    objetos.forEach((objeto, index) => {
+    // Limitar a 5 palabras
+    const objetosLimitados = objetos.slice(0, 5);
+
+    objetosLimitados.forEach(objeto => {
         const elemento = document.createElement('div');
         elemento.className = 'objeto-item';
         elemento.innerHTML = `
-        <div class = "objeto-resultado">
-            <div class="objeto-header">
-                <h3 class="objeto-nombre">${objeto.name}</h3>
+            <div class="objeto-resultado">
+                <div class="objeto-header">
+                    <h3 class="objeto-nombre">${objeto.name}</h3>
+                </div>
             </div>
-        </div>
         `;
         contenidoDiv.appendChild(elemento);
     });
@@ -156,11 +151,11 @@ function mostrarContenido(objetos) {
 
 function wiki(nombre, contenido, recurso) {
     document.getElementById("contenido-informacion").innerHTML = `
-            <h1 class="titulo-palabra">${nombre}</h1>
-            <hr>
-            <div id="descripcion-contenedor">
-                <p class="contenido-palabra">${contenido}</p>
-            </div>
-            <img src="${recurso} class="recurso-palabra">
+        <h1 class="titulo-palabra">${nombre}</h1>
+        <hr>
+        <div id="descripcion-contenedor">
+            <p class="contenido-palabra">${contenido}</p>
+        </div>
+        <img src="${recurso}" class="recurso-palabra">
     `;
 }
