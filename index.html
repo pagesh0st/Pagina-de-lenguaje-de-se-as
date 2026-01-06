@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Biblioteca de Lenguaje de Señas</title>
     <link rel="stylesheet" href="style.css">
-
-    <script src="code.js"></script>
+    <script src="code.js" defer></script>
 </head>
 
 <body>
     <div id="main">
-        <div id="barra-de-titulo">
-            <h1 id="titulo">Biblioteca de lenguaje de señas</h1>
-            <img src="portada.jpg" alt="">
-        </div>
+        <header id="barra-de-titulo">
+            <div class="titulo-wrapper">
+                <h1 id="titulo">Biblioteca de Lenguaje de Señas</h1>
+            </div>
+            <img src="portada.jpg" alt="Imagen representativa del lenguaje de señas">
+        </header>
 
-        <div class="buscador-container">
-            <input type="text" id="busqueda" placeholder="Buscar palabras..." autocomplete="off">
+        <section class="buscador-container">
+            <div class="buscador-wrapper">
+                <input 
+                    type="text" 
+                    id="busqueda" 
+                    placeholder="Buscar palabras o señas..." 
+                    autocomplete="off"
+                    aria-label="Buscar palabras en el diccionario"
+                >
+            </div>
             <div class="contenedor-resultados">
                 <div id="contenido"></div>
             </div>
+        </section>
+    </div>
+
+    <aside id="contenido-informacion">
+        <div class="info-placeholder">
+            <p>Selecciona una palabra para ver su descripción y señas</p>
         </div>
-    </div>
-
-    <div id="contenido-informacion">
-
-    </div>
+    </aside>
 
 </body>
 

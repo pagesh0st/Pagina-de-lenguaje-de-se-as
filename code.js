@@ -105,9 +105,9 @@ function mostrarResultadosFiltrados(objetos, termino) {
         const nombreResaltado = resaltarTexto(objeto.name, termino);
 
         elemento.innerHTML = `
-            <div class="objeto-resultado">
-                <div class="objeto-header">
-                    <h3 class="objeto-nombre" onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}')">${nombreResaltado}</h3>
+            <div class="objeto-resultado"  onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}')">
+                <div class="objeto-header" >
+                    <h3 class="objeto-nombre">${nombreResaltado}</h3>
                 </div>
             </div>
         `;
