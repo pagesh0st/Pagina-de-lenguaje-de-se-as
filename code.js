@@ -140,12 +140,24 @@ function mostrarContenido(objetos) {
 }
 
 function wiki(nombre, contenido, recurso) {
+    let letrasHTML = '<div class="letras-contenedor">';
+    for (let i = 0; i < nombre.length; i++) {
+        const letra = nombre[i].toLowerCase();
+        if (letra.match(/[a-záéíóúñ]/)) {
+            letrasHTML += `<img src="sources/${letra}.jpg" class="letra-imagen" alt="${letra}">`;
+        } else if (letra === ' ') {
+            letrasHTML += '<span class="letra-espacio"></span>';
+        }
+    }
+    letrasHTML += '</div>';
+    
     document.getElementById("contenido-informacion").innerHTML = `
         <h1 class="titulo-palabra">${nombre}</h1>
         <hr>
         <div id="descripcion-contenedor">
             <p class="contenido-palabra">${contenido}</p>
         </div>
-        <img src="${recurso}" class="recurso-palabra">
+        
+        ${letrasHTML}
     `;
 }
