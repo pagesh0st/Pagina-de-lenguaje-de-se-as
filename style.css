@@ -278,7 +278,6 @@ input::placeholder {
     }
 }
 
-/* Estilos para el contenedor de letras */
 .letras-contenedor {
     display: flex;
     flex-wrap: wrap;
@@ -293,10 +292,9 @@ input::placeholder {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilos para cada imagen de letra */
 .letra-imagen {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     border-radius: 10px;
     background: white;
