@@ -34,7 +34,6 @@ function filtrarPalabras(termino) {
         return;
     }
 
-    // Filtrar objetos que contengan el término exacto como subcadena
     const resultados = listaObjetos.filter(obj => {
         const nombre = obj.name.toLowerCase();
         const descripcion = obj.description.toLowerCase();
@@ -45,28 +44,23 @@ function filtrarPalabras(termino) {
                id.includes(termino);
     });
 
-    // Ordenar por relevancia
     resultados.sort((a, b) => {
         const nombreA = a.name.toLowerCase();
         const nombreB = b.name.toLowerCase();
         
-        // Coincidencia exacta primero
         if (nombreA === termino && nombreB !== termino) return -1;
         if (nombreB === termino && nombreA !== termino) return 1;
         
-        // Empieza con el término
         const empiezaA = nombreA.startsWith(termino);
         const empiezaB = nombreB.startsWith(termino);
         if (empiezaA && !empiezaB) return -1;
         if (empiezaB && !empiezaA) return 1;
         
-        // Contiene el término en el nombre
         const contieneNombreA = nombreA.includes(termino);
         const contieneNombreB = nombreB.includes(termino);
         if (contieneNombreA && !contieneNombreB) return -1;
         if (contieneNombreB && !contieneNombreA) return 1;
         
-        // Por defecto, orden alfabético
         return nombreA.localeCompare(nombreB);
     });
 
@@ -90,11 +84,9 @@ function mostrarResultadosFiltrados(objetos, termino) {
     encabezado.className = 'resultados-header';
     encabezado.innerHTML = `
         <p>Se encontraron <strong>${objetos.length}</strong> resultados para: <strong>"${termino}"</strong></p>
-        <p class="ayuda-filtro">Mostrando los primeros 5 resultados ordenados por relevancia</p>
     `;
     contenidoDiv.appendChild(encabezado);
 
-    // Limitar a 5 resultados
     const objetosLimitados = objetos.slice(0, 5);
 
     objetosLimitados.forEach(objeto => {
@@ -118,7 +110,6 @@ function mostrarResultadosFiltrados(objetos, termino) {
 function resaltarTexto(texto, termino) {
     if (!termino) return texto;
     
-    // Escapar caracteres especiales en regex
     const terminoEscapado = termino.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const regex = new RegExp(`(${terminoEscapado})`, 'gi');
     return texto.replace(regex, '<span class="resaltado">$1</span>');
@@ -132,14 +123,13 @@ function mostrarContenido(objetos) {
     const contenidoDiv = document.getElementById('contenido');
     contenidoDiv.innerHTML = '';
 
-    // Limitar a 5 palabras
     const objetosLimitados = objetos.slice(0, 5);
 
     objetosLimitados.forEach(objeto => {
         const elemento = document.createElement('div');
         elemento.className = 'objeto-item';
         elemento.innerHTML = `
-            <div class="objeto-resultado">
+            <div class="objeto-resultado"  onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}')">
                 <div class="objeto-header">
                     <h3 class="objeto-nombre">${objeto.name}</h3>
                 </div>
