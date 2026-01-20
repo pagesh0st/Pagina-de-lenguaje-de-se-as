@@ -3,192 +3,224 @@
         "id": "abcd1",
         "name": "mano",
         "description": "Para representar la palabra mano en la Lengua de Signos Española (LSE), se destaca la mano dominante manteniéndola activa frente al torso, con la palma orientada hacia uno mismo y los dedos extendidos y juntos. La otra mano, que actúa como base o referente, adopta una posición similar con la palma hacia arriba. La mano activa realiza entonces un movimiento corto y preciso, llevando su borde cubital (el lado del meñique) a golpear o posarse ligeramente sobre la palma de la mano base, cerca del centro de la misma, estableciendo así un contacto que delimita y designa específicamente esta parte del cuerpo.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "cuerpo"
     },
     {
         "id": "abcd2",
         "name": "brazo",
         "description": "Para representar la palabra brazo en la Lengua de Signos Española (LSE), se utiliza una mano con los dedos extendidos y juntos, mientras que el brazo contrario actúa como referente. La mano activa, con la palma orientada hacia el cuerpo, se coloca de manera que el borde cubital (el lado del meñique) recorra longitudinalmente la parte superior del brazo contrario, desde el hombro hasta el codo, en un trazo firme y continuo. Este contacto directo sobre la zona anatómica que se está designando identifica de forma clara y específica la parte del cuerpo en cuestión.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "cuerpo"
     },
     {
         "id": "abcd3",
         "name": "torso",
         "description": "Para representar la palabra torso en la Lengua de Signos Española (LSE), se utilizan ambas manos con las palmas abiertas y planas, orientadas hacia el cuerpo. Las manos se colocan a la altura del pecho, con las yemas de los dedos tocando ligeramente la parte superior del torso. Desde esta posición inicial, se ejecuta un movimiento simultáneo y simétrico en el que ambas manos descienden por la parte frontal del cuerpo con un ligero arco hacia los lados, siguiendo el contorno del pecho y el abdomen, hasta llegar aproximadamente a la cintura, delineando así con el gesto la silueta central y el volumen del tronco humano.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "cuerpo"
     },
     {
         "id": "abcd4",
         "name": "cabeza",
         "description": "Para representar la palabra cabeza en la Lengua de Signos Española (LSE), se utiliza una mano con los dedos ligeramente flexionados y separados, adoptando una forma curvada. La palma de esta mano se orienta hacia uno mismo y se coloca de tal manera que la yema de los dedos toque ligeramente la sien. Desde este punto de contacto inicial, la mano ejecuta un suave movimiento circular, describiendo un pequeño arco que bordea la parte superior y lateral del cráneo, para finalmente detenerse cerca de la otra sien, delineando así de forma icónica el contorno redondeado de la cabeza.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "cuerpo"
     },
     {
         "id": "abcd5",
         "name": "casa",
         "description": "Para representar la palabra casa en la Lengua de Signos Española (LSE), se configura ambas manos con la misma forma: palmas enfrentadas y planas, con los dedos juntos y extendidos, imitando las paredes laterales de una construcción. Partiendo de esta posición con las manos separadas a la altura del pecho, se realiza un movimiento simultáneo en el que las yemas de los dedos de ambas manos se acercan hasta tocarse en la parte superior, formando con los brazos y las manos el perfil triangular característico de un tejado a dos aguas. Este gesto, que concluye con las manos unidas por sus bordes superiores, simboliza de manera icónica la estructura de una vivienda.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "hogar"
     },
     {
         "id": "abcd6",
         "name": "libro",
         "description": "Para representar la palabra libro en la Lengua de Signos Española (LSE), se colocan ambas manos con las palmas enfrentadas y ligeramente abiertas, como si se sostuviera un objeto entre ellas. Los dedos están extendidos y ligeramente separados. A continuación, se realiza un movimiento en el que las palmas se abren simultáneamente hacia afuera, como si se abrieran las páginas de un libro, manteniendo un ligero contacto entre los bordes de los dedos meñiques para simular el lomo de la encuadernación.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "hogar"
     },
     {
         "id": "abcd7",
         "name": "agua",
         "description": "Para representar la palabra agua en la Lengua de Signos Española (LSE), se utiliza una mano con los dedos extendidos y juntos, y la palma orientada hacia abajo. La mano realiza un movimiento ondulante y suave de izquierda a derecha frente al torso, imitando la superficie fluida y en movimiento de un río o lago. El gesto transmite la cualidad líquida y fluida del elemento.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "naturaleza"
     },
     {
         "id": "abcd8",
         "name": "comer",
         "description": "Para representar la palabra comer en la Lengua de Signos Española (LSE), se configura una mano en forma de 'C' suave, con los dedos ligeramente curvados y el pulgar opuesto. La mano se acerca a la boca con un movimiento corto y repetitivo, simulando el gesto de llevarse alimento a la boca. La acción se realiza con naturalidad, enfatizando el concepto de ingerir alimentos.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "verbos"
     },
     {
         "id": "abcd9",
         "name": "amigo",
         "description": "Para representar la palabra amigo en la Lengua de Signos Española (LSE), se extienden los dedos índice y medio de ambas manos, manteniendo los demás dedos cerrados. Las dos manos se colocan frente al pecho con las palmas orientadas hacia el cuerpo, y los dedos extendidos se entrelazan suavemente, simbolizando la conexión y el vínculo cercano entre dos personas.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "familia"
     },
     {
         "id": "abcd10",
         "name": "trabajar",
         "description": "Para representar la palabra trabajar en la Lengua de Signos Española (LSE), se cierra una mano en un puño firme, con el pulgar apoyado sobre los dedos índice y medio. El puño se coloca a la altura del hombro opuesto y golpea suavemente hacia abajo dos veces sobre el antebrazo contrario, simulando el gesto de realizar un esfuerzo físico o una tarea manual con herramienta.",
-        "src": "a/b/c"
+        "src": "a/b/c",
+        "categoria": "verbos"
     },
     {
         "id": "yzab1",
         "name": "sol",
         "description": "Para representar la palabra sol en LSE, se extiende el dedo índice de la mano dominante y se dibuja un círculo en el aire frente a la frente o ligeramente por encima de la cabeza. A veces, tras dibujar el círculo, los dedos de ambas manos (todos extendidos) se abren en explosión desde el centro del círculo hacia afuera, representando los rayos del sol.",
-        "src": "naturaleza/sol"
+        "src": "naturaleza/sol",
+        "categoria": "naturaleza"
     },
     {
         "id": "yzab2",
         "name": "lluvia",
         "description": "Para representar la palabra lluvia en LSE, ambas manos se colocan a la altura de los hombros con los dedos extendidos y apuntando hacia abajo. Los dedos se mueven de manera alternativa y repetitiva hacia abajo, en un temblor rápido, imitando las gotas de agua cayendo. La cabeza puede inclinarse ligeramente hacia atrás y la mirada dirigirse hacia arriba.",
-        "src": "naturaleza/lluvia"
+        "src": "naturaleza/lluvia",
+        "categoria": "naturaleza"
     },
     {
         "id": "yzab3",
         "name": "árbol",
         "description": "Para representar la palabra árbol en LSE, el antebrazo no dominante se coloca verticalmente frente al torso, con el puño cerrado, representando el tronco. La mano dominante, con los dedos extendidos y separados, se coloca sobre el 'tronco' y se abre con un movimiento de expansión, manteniendo la muñeca en contacto, para representar la copa frondosa del árbol.",
-        "src": "naturaleza/arbol"
+        "src": "naturaleza/arbol",
+        "categoria": "naturaleza"
     },
     {
         "id": "yzab4",
         "name": "mañana",
         "description": "Para representar el concepto mañana en LSE, la mano no dominante se coloca con el antebrazo horizontal frente al cuerpo, palma hacia abajo, representando el horizonte. La mano dominante, con el brazo flexionado y el codo apoyado en el dorso de la mano base, extiende el antebrazo y la mano hacia arriba y adelante, con los dedos extendidos, representando el sol que se eleva por encima del horizonte.",
-        "src": "tiempo/manana"
+        "src": "tiempo/manana",
+        "categoria": "tiempo"
     },
     {
         "id": "uvwx1",
         "name": "pan",
         "description": "Para representar la palabra pan en LSE, la mano no dominante se coloca plana, con la palma hacia arriba, simulando una superficie. La mano dominante, con los dedos ligeramente curvados como si se sostuviera un cuchillo, realiza un movimiento corto y seco de 'corte' sobre el centro de la palma de la mano base, imitando el gesto de rebanar una barra de pan.",
-        "src": "alimentos/pan"
+        "src": "alimentos/pan",
+        "categoria": "alimentos"
     },
     {
         "id": "uvwx2",
         "name": "leche",
         "description": "Para representar la palabra leche en LSE, se cierra la mano en un puño suave, como si se ordeñara. La mano realiza un movimiento repetitivo de apertura y cierre, mientras se mueve de arriba hacia abajo, imitando la acción tradicional de ordeñar una vaca. Este signo icónico es muy reconocido y establecido.",
-        "src": "alimentos/leche"
+        "src": "alimentos/leche",
+        "categoria": "alimentos"
     },
     {
         "id": "uvwx3",
         "name": "café",
         "description": "Para representar la palabra café en LSE, se cierra una mano en un puño, extendiendo el dedo índice y el meñique (gesto que en algunos contextos representa una taza con asa). La mano se coloca a la altura del pecho y se realiza un pequeño movimiento circular, como si se estuviera removiendo el contenido de la taza con una cuchara imaginaria.",
-        "src": "alimentos/cafe"
+        "src": "alimentos/cafe",
+        "categoria": "alimentos"
     },
     {
         "id": "qrst1",
         "name": "grande",
         "description": "Para representar el concepto grande en LSE, ambas manos se colocan con las palmas enfrentadas y separadas, con los dedos extendidos y juntos. En un movimiento simultáneo y lento, las manos se separan horizontalmente hacia los lados, aumentando la distancia entre ellas. La expresión facial suele acompañarse con los ojos y la boca ligeramente abiertos, denotando amplitud.",
-        "src": "conceptos/grande"
+        "src": "conceptos/grande",
+        "categoria": "emociones"
     },
     {
         "id": "qrst2",
         "name": "pequeño",
         "description": "Para representar el concepto pequeño en LSE, ambas manos se colocan con las palmas enfrentadas y muy juntas, casi tocándose. Los dedos pulgar e índice de cada mano pueden estar pinzados, mientras los otros dedos están semicerrados. Las manos realizan un movimiento muy corto de acercamiento mutuo, reduciendo aún más el espacio entre ellas. La expresión facial se concentra, a menudo con los labios fruncidos.",
-        "src": "conceptos/pequeno"
+        "src": "conceptos/pequeno",
+        "categoria": "emociones"
     },
     {
         "id": "qrst3",
         "name": "feliz",
         "description": "Para representar el concepto feliz en LSE, ambas manos, con los dedos extendidos y separados, se colocan a la altura del pecho con las palmas orientadas hacia el cuerpo. Desde esta posición, las manos realizan un movimiento simultáneo, ascendente y expansivo en círculos abiertos hacia afuera, terminando con las palmas hacia arriba a la altura de los hombros. Se acompaña de una amplia sonrisa.",
-        "src": "conceptos/feliz"
+        "src": "conceptos/feliz",
+        "categoria": "emociones"
     },
     {
         "id": "qrst4",
         "name": "triste",
         "description": "Para representar el concepto triste en LSE, se utiliza la mano con los dedos extendidos y juntos. La palma se orienta hacia el propio rostro y la yema de los dedos se coloca justo debajo del ojo. Desde ahí, la mano desciende en línea recta por la mejilla, como si trazara el camino de una lágrima. La expresión facial es de ceño fruncido y comisuras de la boca hacia abajo.",
-        "src": "conceptos/triste"
+        "src": "conceptos/triste",
+        "categoria": "emociones"
     },
     {
         "id": "qrst5",
         "name": "gracias",
         "description": "Para representar la palabra gracias en LSE, se lleva la mano dominante, con los dedos extendidos y juntos, hacia los labios. La yema de los dedos toca suavemente el centro del labio inferior. Luego, la mano se desplaza hacia adelante y ligeramente hacia abajo en un gesto de ofrecimiento, con la palma orientada hacia arriba. Es un signo que combina un punto de partida afectivo (los labios/boca) con un movimiento de dar.",
-        "src": "conceptos/gracias"
+        "src": "conceptos/gracias",
+        "categoria": "emociones"
     },
     {
         "id": "mnop1",
         "name": "dormir",
         "description": "Para representar la palabra dormir en LSE, ambas manos se colocan planas, con las palmas orientadas hacia el cuerpo y los dedos ligeramente separados. Se sitúan a un lado de la cara, inclinadas, como si fueran una almohada. La cabeza se inclina ligeramente hacia las manos en un gesto que imita el acto de reposar la cabeza para dormir. A menudo se cierran los ojos durante el signo para reforzar el significado.",
-        "src": "verbos/dormir"
+        "src": "verbos/dormir",
+        "categoria": "verbos"
     },
     {
         "id": "mnop2",
         "name": "beber",
         "description": "Para representar la palabra beber en LSE, se configura la mano en forma de 'C' suave, como si se sostuviera un vaso. La mano se lleva desde una posición frente al pecho hacia la boca, en un trayecto corto y natural, terminando con la parte inferior de la 'C' (el pulgar) cerca del labio inferior, simulando el gesto de tomar un líquido.",
-        "src": "verbos/beber"
+        "src": "verbos/beber",
+        "categoria": "verbos"
     },
     {
         "id": "mnop3",
         "name": "leer",
         "description": "Para representar la palabra leer en LSE, ambas manos adoptan la configuración como si sostuvieran un 'libro' abierto (palmas enfrentadas). Luego, la mirada se dirige hacia las palmas de las manos y los ojos realizan un movimiento de barrido de izquierda a derecha, imitando la acción de seguir las líneas de un texto. El gesto facial es de atención y concentración.",
-        "src": "verbos/leer"
+        "src": "verbos/leer",
+        "categoria": "verbos"
     },
     {
         "id": "mnop4",
         "name": "escribir",
         "description": "Para representar la palabra escribir en LSE, la mano dominante adopta la configuración como si sostuviera un bolígrafo (pulgar, índice y medio extendidos y ligeramente pinzados). Esta mano se coloca sobre la palma plana y extendida de la mano no dominante, que hace de 'papel'. La mano 'escritora' realiza pequeños movimientos secuenciales de izquierda a derecha, simulando el trazo de letras.",
-        "src": "verbos/escribir"
+        "src": "verbos/escribir",
+        "categoria": "verbos"
     },
     {
         "id": "mnop5",
         "name": "entender / comprender",
         "description": "Para representar los conceptos entender o comprender en LSE, se lleva la punta del dedo índice extendido de la mano dominante a la sien. Luego, la mano se abre rápidamente, con todos los dedos extendidos y la palma orientada hacia adelante, mientras se aleja ligeramente de la cabeza. Este gesto simboliza la idea saliendo de la mente de forma clara.",
-        "src": "verbos/entender"
+        "src": "verbos/entender",
+        "categoria": "verbos"
     },
     {
         "id": "ijkl1",
         "name": "madre",
         "description": "Para representar la palabra madre en LSE, se extiende el dedo pulgar de la mano dominante. La yema del pulgar se coloca en la punta de la barbilla y luego se mueve hacia adelante en un arco corto y definido, separándose de la cara. Este signo parte de un punto de referencia central en el rostro para denotar la figura materna.",
-        "src": "familia/madre"
+        "src": "familia/madre",
+        "categoria": "familia"
     },
     {
         "id": "ijkl2",
         "name": "padre",
         "description": "Para representar la palabra padre en LSE, se extiende el dedo pulgar de la mano dominante. La yema del pulgar se coloca en la frente, a un lado (generalmente el lado dominante), y desde allí se mueve hacia adelante en un arco corto y definido. La localización en la frente distingue este signo del de 'madre'.",
-        "src": "familia/padre"
+        "src": "familia/padre",
+        "categoria": "familia"
     },
     {
         "id": "ijkl3",
         "name": "hermano",
         "description": "Para representar la palabra hermano en LSE, se parte del signo de 'hombre'. Primero se toca la frente con el dedo índice extendido (signo para 'hombre'). Luego, ambas manos adoptan una configuración con los dedos índice y medio extendidos (representando las piernas). Las manos, una junto a la otra a la altura de la cadera, se mueven simultáneamente hacia adelante en líneas paralelas, simbolizando a dos personas de un mismo núcleo caminando juntas.",
-        "src": "familia/hermano"
+        "src": "familia/hermano",
+        "categoria": "familia"
     },
     {
         "id": "ijkl4",
         "name": "hermana",
         "description": "Para representar la palabra hermana en LSE, se sigue una estructura similar a 'hermano'. Primero se toca la barbilla con el dedo pulgar (signo para 'mujer'). A continuación, se realiza el mismo movimiento de las dos manos con dedos índice y medio extendidos (las 'personas') moviéndose hacia adelante en paralelo desde la cadera.",
-        "src": "familia/hermana"
+        "src": "familia/hermana",
+        "categoria": "familia"
     },
     {
         "id": "ijkl5",
         "name": "hijo",
         "description": "Para representar la palabra hijo en LSE, se parte de la mano con el brazo extendido lateralmente, como si se sostuviera a un bebé meciéndolo. La mano, con la palma hacia arriba y los dedos ligeramente curvados, realiza un suave movimiento de balanceo de delante hacia atrás a la altura de la cadera. Luego, se ejecuta el signo de 'hombre' (dedo índice en la frente).",
-        "src": "familia/hijo"
+        "src": "familia/hijo",
+        "categoria": "familia"
     }
 ]

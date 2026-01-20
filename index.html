@@ -11,9 +11,13 @@
 
 <body>
     <div id="main">
+        <div class="institucion-header">
+            <h1>Unidad Educativa Fiscal Réplica Vicente Rocafuerte</h1>
+        </div>
+        
         <header id="barra-de-titulo">
             <div class="titulo-wrapper">
-                <h1 id="titulo">Biblioteca de Lenguaje de Señas</h1>
+                <h2 id="titulo">Biblioteca de Lenguaje de Señas</h2>
             </div>
             <img src="portada.jpg" alt="lenguajesIMG">
         </header>
@@ -28,6 +32,24 @@
                     aria-label="Buscar palabras en el diccionario"
                 >
             </div>
+            
+            <!-- Sección de categorías -->
+            <div class="categorias-wrapper">
+                <h3>Categorías</h3>
+                <div class="categorias-grid">
+                    <button class="categoria-btn active" data-categoria="todas">Todas</button>
+                    <button class="categoria-btn" data-categoria="cuerpo">Cuerpo Humano</button>
+                    <button class="categoria-btn" data-categoria="hogar">Hogar</button>
+                    <button class="categoria-btn" data-categoria="naturaleza">Naturaleza</button>
+                    <button class="categoria-btn" data-categoria="alimentos">Alimentos</button>
+                    <button class="categoria-btn" data-categoria="verbos">Acciones/Verbos</button>
+                    <button class="categoria-btn" data-categoria="familia">Familia</button>
+                    <button class="categoria-btn" data-categoria="emociones">Emociones</button>
+                    <button class="categoria-btn" data-categoria="tiempo">Tiempo</button>
+                    <button class="categoria-btn" onclick="video()">Abecedario</button>
+                </div>
+            </div>
+            
             <div class="contenedor-resultados">
                 <div id="contenido"></div>
             </div>

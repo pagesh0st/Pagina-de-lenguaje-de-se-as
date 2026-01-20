@@ -1,4 +1,5 @@
 let listaObjetos = [];
+let categoriaActual = 'todas';
 
 filter();
 
@@ -10,6 +11,7 @@ function filter() {
             listaObjetos = data;
             mostrarContenido(listaObjetos);
             configurarFiltro();
+            configurarCategorias();
         })
         .catch(error => console.error('Error:', error));
 }
@@ -28,13 +30,50 @@ function configurarFiltro() {
     });
 }
 
-function filtrarPalabras(termino) {
-    if (!termino) {
+function configurarCategorias() {
+    const botonesCategorias = document.querySelectorAll('.categoria-btn');
+    
+    botonesCategorias.forEach(boton => {
+        boton.addEventListener('click', function() {
+            botonesCategorias.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            categoriaActual = this.dataset.categoria;
+            
+            const inputBusqueda = document.getElementById('busqueda');
+            if (inputBusqueda) {
+                inputBusqueda.value = '';
+            }
+            
+            filtrarPorCategoria(categoriaActual);
+        });
+    });
+}
+
+function filtrarPorCategoria(categoria) {
+    if (categoria === 'todas') {
         mostrarContenido(listaObjetos);
         return;
     }
+    
+    const resultados = listaObjetos.filter(obj => obj.categoria === categoria);
+    mostrarResultadosCategoria(resultados, categoria);
+}
 
-    const resultados = listaObjetos.filter(obj => {
+function filtrarPalabras(termino) {
+    if (!termino) {
+        filtrarPorCategoria(categoriaActual);
+        return;
+    }
+
+    let objetosFiltrados = listaObjetos;
+    
+    // Si hay una categoría seleccionada (que no sea 'todas'), filtrar por ella primero
+    if (categoriaActual !== 'todas') {
+        objetosFiltrados = listaObjetos.filter(obj => obj.categoria === categoriaActual);
+    }
+    
+    const resultados = objetosFiltrados.filter(obj => {
         const nombre = obj.name.toLowerCase();
         const descripcion = obj.description.toLowerCase();
         const id = obj.id.toLowerCase();
@@ -67,6 +106,46 @@ function filtrarPalabras(termino) {
     mostrarResultadosFiltrados(resultados, termino);
 }
 
+function mostrarResultadosCategoria(objetos, categoria) {
+    const contenidoDiv = document.getElementById('contenido');
+    contenidoDiv.innerHTML = '';
+
+    const nombreCategoria = {
+        'cuerpo': 'Cuerpo Humano',
+        'hogar': 'Hogar',
+        'naturaleza': 'Naturaleza',
+        'alimentos': 'Alimentos',
+        'verbos': 'Acciones/Verbos',
+        'familia': 'Familia',
+        'emociones': 'Emociones',
+        'tiempo': 'Tiempo'
+    };
+
+    const encabezado = document.createElement('div');
+    encabezado.className = 'resultados-header';
+    encabezado.innerHTML = `
+        <p>Categoría: <strong>${nombreCategoria[categoria] || categoria}</strong></p>
+        <p>Se encontraron <strong>${objetos.length}</strong> palabras en esta categoría</p>
+    `;
+    contenidoDiv.appendChild(encabezado);
+
+    const objetosLimitados = objetos.slice(0, 10);
+
+    objetosLimitados.forEach(objeto => {
+        const elemento = document.createElement('div');
+        elemento.className = 'objeto-item';
+
+        elemento.innerHTML = `
+            <div class="objeto-resultado" onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}')">
+                <div class="objeto-header">
+                    <h3 class="objeto-nombre">${objeto.name}</h3>
+                </div>
+            </div>
+        `;
+        contenidoDiv.appendChild(elemento);
+    });
+}
+
 function mostrarResultadosFiltrados(objetos, termino) {
     const contenidoDiv = document.getElementById('contenido');
     contenidoDiv.innerHTML = '';
@@ -87,7 +166,7 @@ function mostrarResultadosFiltrados(objetos, termino) {
     `;
     contenidoDiv.appendChild(encabezado);
 
-    const objetosLimitados = objetos.slice(0, 5);
+    const objetosLimitados = objetos.slice(0, 10);
 
     objetosLimitados.forEach(objeto => {
         const elemento = document.createElement('div');
@@ -123,7 +202,7 @@ function mostrarContenido(objetos) {
     const contenidoDiv = document.getElementById('contenido');
     contenidoDiv.innerHTML = '';
 
-    const objetosLimitados = objetos.slice(0, 5);
+    const objetosLimitados = objetos.slice(0, 10);
 
     objetosLimitados.forEach(objeto => {
         const elemento = document.createElement('div');
@@ -160,4 +239,10 @@ function wiki(nombre, contenido, recurso) {
         
         ${letrasHTML}
     `;
+}
+
+function video() {
+    document.getElementById("contenido-informacion").innerHTML = `
+        <video src="sources/video.mp4" controls></video>
+    `
 }
