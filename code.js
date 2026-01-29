@@ -136,7 +136,7 @@ function mostrarResultadosCategoria(objetos, categoria) {
         elemento.className = 'objeto-item';
 
         elemento.innerHTML = `
-            <div class="objeto-resultado" onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}')">
+            <div class="objeto-resultado" onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}', true)">
                 <div class="objeto-header">
                     <h3 class="objeto-nombre">${objeto.name}</h3>
                 </div>
@@ -176,7 +176,7 @@ function mostrarResultadosFiltrados(objetos, termino) {
         const nombreResaltado = resaltarTexto(objeto.name, termino);
 
         elemento.innerHTML = `
-            <div class="objeto-resultado"  onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}')">
+            <div class="objeto-resultado"  onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}', true)">
                 <div class="objeto-header" >
                     <h3 class="objeto-nombre">${nombreResaltado}</h3>
                 </div>
@@ -208,7 +208,7 @@ function mostrarContenido(objetos) {
         const elemento = document.createElement('div');
         elemento.className = 'objeto-item';
         elemento.innerHTML = `
-            <div class="objeto-resultado"  onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}')">
+            <div class="objeto-resultado"  onclick="wiki('${escaparComillas(objeto.name)}', '${escaparComillas(objeto.description)}', '${escaparComillas(objeto.src)}', true)">
                 <div class="objeto-header">
                     <h3 class="objeto-nombre">${objeto.name}</h3>
                 </div>
@@ -218,7 +218,7 @@ function mostrarContenido(objetos) {
     });
 }
 
-function wiki(nombre, contenido, recurso) {
+function wiki(nombre, contenido, recurso, titulovisible) {
     let letrasHTML = '<div class="letras-contenedor">';
     for (let i = 0; i < nombre.length; i++) {
         const letra = nombre[i].toLowerCase();
@@ -230,6 +230,8 @@ function wiki(nombre, contenido, recurso) {
     }
     letrasHTML += '</div>';
     
+
+    if(titulovisible == true) {
     document.getElementById("contenido-informacion").innerHTML = `
         <h1 class="titulo-palabra">${nombre}</h1>
         <hr>
@@ -239,10 +241,20 @@ function wiki(nombre, contenido, recurso) {
         
         ${letrasHTML}
     `;
+    } else {
+    document.getElementById("contenido-informacion").innerHTML = `
+        <h1 class="titulo-palabra">Abecedario</h1>
+        <hr>
+        <video src="sources/video.mp4" controls></video>
+        <div id="descripcion-contenedor">
+            <p class="contenido-palabra">${contenido}</p>
+        </div>
+        
+        ${letrasHTML}
+    `;
+    }
 }
 
 function video() {
-    document.getElementById("contenido-informacion").innerHTML = `
-        <video src="sources/video.mp4" controls></video>
-    `
+    wiki("abcdefghijklnmñopqrstuvwkyz", "", "", false);
 }
