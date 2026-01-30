@@ -26,6 +26,8 @@ body {
 }
 
 .institucion-header {
+    display:flex;
+    flex-direction: row;
     background-color: #4400ff;
     padding: 1.5rem 2rem;
     text-align: center;
